@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-    echo 'aula 3';
+    echo 'aula 3 - teste docker hub';
 ?>
 </body>
 </html>
