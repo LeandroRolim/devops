@@ -13,4 +13,4 @@ deploy-k8s:
     - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/latest.txt)/bin/linux/amd64/kubectl
     - chmod +x /usr/bin/kubectl
     - kubectl version --client
-    - kubectl apply -f .k8s/*.yaml
+    - kubectl apply -f .k8s
