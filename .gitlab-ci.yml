@@ -1,0 +1,16 @@
+stages:
+  - deploy
+
+deploy-k8s:
+  image: alpine
+  stage: deploy
+  only:
+    refs:
+      - main
+  when: manual
+  script:
+    - apk --no-cache add curl
+    - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/latest.txt)/bin/linux/amd64/kubectl
+    - chmod +x /usr/bin/kubectl
+    - kubectl version --client
+    - kubectl apply -f .k8s/*.yaml
