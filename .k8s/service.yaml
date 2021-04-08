@@ -4,11 +4,11 @@ metadata:
   name: devops-service
   namespace: default
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: devops
     aula: "03"
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30500
+      name: http

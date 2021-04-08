@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: default
+  name: devops-ingress
+spec:
+  defaultBackend:
+    service:
+      name: devops-service
+      port:
+        number: 80
+  rules:
+    - host: devops.leandrorolim.com.br
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: devops-service
+                port:
+                  number: 80
+
