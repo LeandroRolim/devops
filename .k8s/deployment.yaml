@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: leandrorolim/devops
+          image: leandrorolim/devops:DOCKER_TAG
           ports:
             - containerPort: 80
