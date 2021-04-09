@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-    echo 'aula 3 - teste docker hub';
+    echo 'aula 5 - finalizando deploy automático no k8s';
 ?>
 </body>
 </html>
