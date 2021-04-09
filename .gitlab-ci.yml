@@ -1,5 +1,20 @@
 stages:
+  - build
   - deploy
+
+
+build-docker:
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  stage: build
+  only:
+    refs:
+      - main
+  when: always
+  script:
+    - echo DOCKERCONFIG > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination leandrorolim/devops:$CI_COMMIT_SHA
 
 deploy-k8s:
   image: alpine
