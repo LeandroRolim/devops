@@ -13,7 +13,7 @@ build-docker:
       - main
   when: always
   script:
-    - echo DOCKERCONFIG > /kaniko/.docker/config.json
+    - echo $DOCKERCONFIG > /kaniko/.docker/config.json
     - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination leandrorolim/devops:$CI_COMMIT_SHA
 
 deploy-k8s:
