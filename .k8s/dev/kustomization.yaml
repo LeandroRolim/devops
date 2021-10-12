@@ -1,7 +1,6 @@
 bases:
   - ../base
 
-namespace: devops-prod
 namePrefix: dev-
 commonLabels:
   env: dev
