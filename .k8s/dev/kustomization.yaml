@@ -1,9 +1,12 @@
 bases:
   - ../base
-
+namespace: devops-dev
 namePrefix: dev-
 commonLabels:
   env: dev
 images:
   - name: leandrorolim/devops
     newTag: dev
+
+patches:
+  - ingress_host.yaml
