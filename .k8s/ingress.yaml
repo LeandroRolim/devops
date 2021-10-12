@@ -10,7 +10,7 @@ spec:
       port:
         number: 80
   rules:
-    - host: devops.leandrorolim.com.br
+    - host: devops.127-0-0-1.nip.io
       http:
         paths:
           - path: /
