@@ -1,0 +1,10 @@
+bases:
+  - ../base
+
+namespace: devops-prod
+namePrefix: prod-
+commonLabels:
+  env: prod
+images:
+  - name: leandrorolim/devops
+    newTag: prod
